@@ -4,10 +4,15 @@ class Movie < ActiveRecord::Base
     #  movies with those ratings
     # if ratings_list is nil, retrieve ALL movies
     if ratings_list == nil 
-      return Movie.find(all)
+      return Movie.all
     else
       return Movie.where()
     end
-    
-    end
+  end
+
+  def self.all_ratings
+    return Array['G','PG','PG-13','R']
+  end
+  
+
 end
